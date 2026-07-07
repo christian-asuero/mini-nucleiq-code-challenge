@@ -43,7 +43,7 @@ Each algorithm detects a different simplified marker pattern in the sample. The 
 
 **even-zeroes**: counts each 0 at an even index as a positive cell; the algorithm is positive when positive cells are more than 30% of all cells.
 
-**contiguous-ones**: counts each 1 that is next to another 1 as a positive cell;  the algorithm is positive when positive cells are more than 20% of all cells.
+**contiguous-ones**: counts each 1 that is next (but not previous) to another 1 as a positive cell;  the algorithm is positive when positive cells are more than 20% of all cells.
 
 **surrounded-ones**: counts each 1 whose previous and next cells are both 0 as a positive cell; the algorithm is positive when positive cells are more than 10% of all cells.
 
@@ -69,7 +69,7 @@ Analyze sample-c with: even-zeroes, contiguous-ones, surrounded-ones
 
 even-zeroes: Positive cells = 3, positivity = 30%, result = NEGATIVE
 
-contiguous-ones: positive cells = 3, positivity = 30%, result = POSITIVE
+contiguous-ones: positive cells = 2, positivity = 20%, result = NEGATIVE
 
 surrounded-ones: positive cells = 2, positivity = 20% result = POSITIVE
 
