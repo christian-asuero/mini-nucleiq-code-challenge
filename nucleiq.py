@@ -34,3 +34,28 @@ def pairs_of_zeros(data):
         return 'POSITIVE'
     else:
         return 'NEGATIVE'
+    
+'''
+Phase 2: Algorithms
+Condition 2: Adjacent 1s
+Input: Cell list of matrix
+Output: String with response 'POSITIVE' or 'NEGATIVE'
+'''
+
+def adjacent_ones(data):
+    list_cells = data['cells']
+    total = len(list_cells) 
+    adjacent = 0
+    
+    for index in range(0, total):
+        ones = list_cells[index] == 1
+        ones_left = (index > 0) and (list_cells[index - 1] == 1)
+        ones_right = (index < total - 1) and (list_cells[index + 1] == 1)
+
+        if ones and (ones_right or ones_left):
+            adjacent += 1
+            
+    if adjacent > (total * 0.2):
+        return 'POSITIVE'
+    else:
+        return 'NEGATIVE'
